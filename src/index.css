@@ -5,10 +5,35 @@
     --white: hsl(45,29%,97%);
     --white2: hsl(45,10%,97%);
 }
-
 body {
   font-family: 'Lato', sans-serif; 
+  cursor: none; 
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  pointer-events: none; 
+  transform: translate(-50%, -50%); 
+  z-index: 9999; 
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto; 
+  }
+  .custom-cursor {
+    display: none;
+  }
+}
+
 .lato-thin {
   font-family: "Lato", sans-serif;
   font-weight: 100;

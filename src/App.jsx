@@ -1,31 +1,59 @@
 import Nav from './component/nav'
 import Footer from './component/footer'
-import tawqi from './assets/images/pfp.jpeg'
+import tawqi from './assets/images/pfp2.jpg'
 import TBL from './assets/images/frame8.png'
 import WSP from './assets/images/wsp.jpg'
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 function App() {
 
   const contactRef = useRef(null);
   const projectRef = useRef(null);
+  const heroRef = useRef(null);
 
+  const cursorRef = useRef(null);
+
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollToProject = () => {
+    projectRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${e.clientX}px`;
+        cursorRef.current.style.top = `${e.clientY}px`;
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
   
-
-
   return (
     <>
-      <Nav contactRef={contactRef} projectRef={projectRef}/>
-      <section className='flex flex-col px-10 md:px-25 mt-10 gap-10 text-(--black) md:justify-center md:h-160'>
+    <div ref={cursorRef} className="custom-cursor" />
+      <Nav heroRef={heroRef} contactRef={contactRef} projectRef={projectRef}/>
+      <section    
+        style={{
+          animation: 'fadeIn 1s ease-out 0.5s forwards', 
+          opacity: 0
+        }}
+       ref={heroRef} className=' opacity-0 flex flex-col px-10 md:px-25 mt-10 gap-10 text-(--black) md:justify-center md:h-160'>
         <div>
         <h1 className='text-4xl md:text-6xl lg:text-8xl'>Hey there <br />I'm Tawqi Tahmed</h1>
         <p className='mt-2 text-sm'><span className="before:content-['\2022'] before:mr-2 md:text-2xl">Web Developer & Designer from Bangladesh.</span></p>
         </div>
         <div className="flex justify-center lg:justify-normal gap-5">
-          <button className='px-4 py-2 bg-(--black) text-(--white) md:text-2xl rounded-lg shadow-lg transition-transform duration-200 hover:scale-105 hover:cursor-pointer'>Contact Me</button>
-          <button className='px-4 py-2 bg-(--white) text-(--black) md:text-2xl border border-(--black) rounded-lg shadow-lg transition-transform duration-200 hover:scale-105 hover:cursor-pointer'>MY Project</button>
+          <button onClick={scrollToContact} className='px-4 py-2 bg-(--black) text-(--white) md:text-2xl rounded-lg shadow-lg transition-transform duration-200 hover:scale-105 hover:cursor-pointer'>Contact Me</button>
+          <button onClick={scrollToProject} className='px-4 py-2 bg-(--white) text-(--black) md:text-2xl border border-(--black) rounded-lg shadow-lg transition-transform duration-200 hover:scale-105 hover:cursor-pointer'>MY Project</button>
         </div>
-        <div className='flex gap-2 mt-10 justify-end items-center'>
+        <div className='flex gap-2 mt-10 justify-end items-center'
+          style={{
+          animation: 'fadeIn 1s ease-out 1.1s forwards',
+          opacity: 0
+        }}>
           <p className='text-sm text-right md:text-lg lg:text-xl lg:w-[30vw]'>With a year of self-taught experience, I specialize in crafting engaging front-end designs and simple, effective backend solutions.</p>
           <img src={tawqi} className='w-20 md:w-25 lg:w-30 rounded-lg'></img>
         </div>
@@ -34,7 +62,7 @@ function App() {
         
         <div className='flex flex-col lg:flex-row gap-10 lg:gap-30'>
           
-          <ul className='text-lg md:text-xl space-y-3 list-disc lg:w-full lg:text-2xl flex flex-col gap-5 lg:p-5'>
+          <ul className='text-lg md:text-xl space-y-3 list-disc lg:w-full lg:text-2xl flex flex-col gap-5 lg:py-5'>
             <h1 className='text-2xl md:text-3xl lg:text-4xl'>My Skill</h1>
               <li className='ml-4 font-light'><span className='font-medium'>Front-End:</span>HTML, CSS, JavaScript, React, ReactRouter, Tailwind CSS</li>
               <li className='ml-4 font-light'><span className='font-medium'>UI Design:</span>Clean, user-focused interfaces</li>
@@ -87,7 +115,7 @@ function App() {
       <section ref={projectRef} className='projects px-10 md:px-25 mt-20 gap-10'>
         <div>
           <h1 className='text-2xl md:text-3xl lg:text-4xl'>MY Projects</h1>
-          <p className='md:text-lg mt-3'>Here are some projects that showcase my skills in front-end development, UI design, and simple backend integration.</p>
+          <p className='md:text-lg mt-3'>Here are some projects that showcase my skills in <span className='font-semibold'>front-end development</span>, UI design, and simple backend integration.</p>
         </div>
         <div className="cards flex flex-col md:flex-row justify-between gap-10 lg:gap-30 mt-10">
           <div className="card flex flex-col border-1 rounded-xl md:w-full transition-transform duration-200 hover:scale-102">
@@ -110,16 +138,27 @@ function App() {
 
       </section>
       <section ref={contactRef} className='socials-and-Contact flex flex-col px-10 md:px-25 lg:flex-row gap-10 lg:gap-30 mt-20'>
-          <div className='flex flex-col gap-5 lg:w-full lg:p-5'>
+          <div className='flex flex-col gap-5 lg:w-full lg:py-5'>
            <div>
             <h1 className='text-2xl md:text-3xl lg:text-4xl'>Socials</h1>
             <p className='md:text-lg mt-3'>Follow me for more updats and stuff.</p>
            </div>
-            <button className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fas fa-envelope text-xl'></i>Email</span><i className='fas fa-copy'></i></button>
-            <button className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-facebook text-xl'></i>Facebook</span><i className='fas fa-up-right-from-square'></i></button>
-            <button className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-instagram text-xl'></i>Instagram</span><i className='fas fa-up-right-from-square'></i></button>
-            <button className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-whatsapp text-xl'></i>Whats</span><i className='fas fa-up-right-from-square'></i></button>
-            <button className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-github text-xl'></i>Github</span><i className='fas fa-up-right-from-square'></i></button>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText('youremail@example.com')
+                  .then(() => alert('Email copied!'))
+                  .catch(() => alert('Failed to copy'));
+              }}
+              className='w-full border border-black p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-105 hover:cursor-pointer'
+            >
+              <span className='flex items-center gap-3'>
+                <i className='fas fa-envelope text-xl'></i>Email
+              </span>
+              <i className='fas fa-copy'></i>
+            </button>
+            <a href='https://www.facebook.com/tawqi0/' className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-facebook text-xl'></i>Facebook</span><i className='fas fa-up-right-from-square'></i></a>
+            <a href='https://www.instagram.com/tawqi0' className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-instagram text-xl'></i>Instagram</span><i className='fas fa-up-right-from-square'></i></a>
+            <a href='https://github.com/tawqi' className='w-full border border-(--black) p-2 px-4 items-center flex justify-between rounded-lg md:py-4 shadow-xl transition-transform duration-200 hover:scale-102 hover:cursor-pointer'><span className='flex items-center gap-3'><i className='fab fa-github text-xl'></i>Github</span><i className='fas fa-up-right-from-square'></i></a>
         </div>
         <div className="p-5 flex flex-col bg-(--black) rounded-xl text-(--white) mt-10 lg:mt-0 shadow-2xl lg:w-full">
           <h1 className='text-2xl md:text-3xl lg:text-4xl'>Get in Touch</h1>
@@ -138,7 +177,7 @@ function App() {
         </div>
 
       </section>
-      <Footer />
+      <Footer heroRef={heroRef} contactRef={contactRef} projectRef={projectRef} />
     </>
   )
 }
