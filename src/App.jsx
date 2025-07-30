@@ -124,14 +124,14 @@ function App() {
               <button className='text-lg md:text-xl lg:text-2xl underline hover:cursor-pointer transition-transform duration-200 hover:scale-102'>View Project</button>
               </div>
           </div>
-          <div className="card flex flex-col border-1 rounded-xl md:w-full transition-transform duration-200 hover:scale-102">
+          <a href='https://github.com/Tawqi/ISP-Proj-2' className="card flex flex-col border-1 rounded-xl md:w-full transition-transform duration-200 hover:scale-102">
             <img src={WSP} className='rounded-t-xl' alt="proj1"></img>
             <div className='space-y-2 lg:space-y-4 p-5'>
               <h2 className='text-lg md:text-xl lg:text-2xl'>Omuk-Tomuk</h2>
               <p className='font-light text-sm md:text-base lg:text-lg'>A responsive website with a clean Dark & Blue theme .</p>
               <button className='text-lg md:text-xl lg:text-2xl underline hover:cursor-pointer transition-transform duration-200 hover:scale-102'>View Project</button>
               </div>
-          </div>
+          </a>
         </a>
 
       </section>
