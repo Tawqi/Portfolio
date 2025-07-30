@@ -143,7 +143,7 @@ function App() {
            </div>
             <button
               onClick={() => {
-                navigator.clipboard.writeText('youremail@example.com')
+                navigator.clipboard.writeText('tawqitahmedchy@proton.me')
                   .then(() => alert('Email copied!'))
                   .catch(() => alert('Failed to copy'));
               }}
