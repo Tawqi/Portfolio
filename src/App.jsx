@@ -40,7 +40,8 @@ function App() {
           animation: 'fadeIn 1s ease-out 0.5s forwards', 
           opacity: 0
         }}
-       ref={heroRef} className=' opacity-0 flex flex-col px-10 md:px-25 mt-10 gap-10 text-(--black) md:justify-center md:h-160'>
+        ref={heroRef} 
+        className=' opacity-0 flex flex-col px-10 pt-20 md:px-25 mt-10 gap-10 text-(--black) md:justify-center justify-center md:h-160 lg:h-[100vh]'>
         <div>
         <h1 className='text-4xl md:text-6xl lg:text-8xl'>Hey there <br />I'm Tawqi Tahmed</h1>
         <p className='mt-2 text-sm'><span className="before:content-['\2022'] before:mr-2 md:text-2xl">Web Developer & Designer from Bangladesh.</span></p>
@@ -59,7 +60,6 @@ function App() {
         </div>
       </section>
       <section className="skills sec2 flex flex-col gap-10 px-10 md:px-25 mt-20">
-        
         <div className='flex flex-col lg:flex-row gap-10 lg:gap-30'>
           
           <ul className='text-lg md:text-xl space-y-3 list-disc lg:w-full lg:text-2xl flex flex-col gap-5 lg:py-5'>
@@ -106,8 +106,6 @@ function App() {
           <svg className='w-8 md:w-10' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="url(#a)" d="M98.848 14.801 52.731 98.695a2.486 2.486 0 0 1-4.365.019L1.336 14.808c-1.054-1.878.525-4.153 2.617-3.773L50.12 19.43c.294.053.596.053.89-.002l45.2-8.381c2.086-.387 3.672 1.871 2.638 3.753"/><path fill="url(#b)" d="M72.111.025 37.984 6.828c-.273.054-.52.2-.703.412a1.3 1.3 0 0 0-.307.764l-2.1 36.07a1.3 1.3 0 0 0 .442 1.05 1.25 1.25 0 0 0 1.091.268l9.502-2.23c.889-.21 1.692.587 1.51 1.496l-2.824 14.064c-.19.946.684 1.755 1.592 1.474l5.87-1.813c.909-.281 1.783.53 1.59 1.477l-4.486 22.09c-.28 1.382 1.526 2.135 2.28.951l.503-.791 27.81-56.46c.465-.946-.338-2.024-1.358-1.823l-9.781 1.92c-.92.18-1.701-.69-1.442-1.605l6.384-22.513c.26-.917-.526-1.788-1.446-1.604"/><defs><linearGradient id="a" x1=".187" x2="51.038" y1="17.805" y2="85.688" gradientUnits="userSpaceOnUse"><stop stopColor="#41D1FF"/><stop offset="1" stopColor="#BD34FE"/></linearGradient><linearGradient id="b" x1="54.398" x2="64.98" y1="1.872" y2="73.224" gradientUnits="userSpaceOnUse"><stop stopColor="#FFEA83"/><stop offset=".083" stopColor="#FFDD35"/><stop offset="1" stopColor="#FFA800"/></linearGradient></defs></svg>
           <svg className='w-8 md:w-10' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="#0ACF83" d="M33.333 100C42.533 100 50 92.533 50 83.333V66.667H33.333c-9.2 0-16.666 7.466-16.666 16.666S24.133 100 33.333 100"/><path fill="#A259FF" d="M16.667 50c0-9.2 7.466-16.667 16.666-16.667H50v33.334H33.333c-9.2 0-16.666-7.467-16.666-16.667"/><path fill="#F24E1E" d="M16.667 16.667C16.667 7.467 24.133 0 33.333 0H50v33.333H33.333c-9.2 0-16.666-7.466-16.666-16.666"/><path fill="#FF7262" d="M50 0h16.667c9.2 0 16.666 7.467 16.666 16.667s-7.466 16.666-16.666 16.666H50z"/><path fill="#1ABCFE" d="M83.333 50c0 9.2-7.466 16.667-16.666 16.667S50 59.2 50 50s7.467-16.667 16.667-16.667S83.333 40.8 83.333 50"/></svg>
           <svg className='w-8 md:w-10' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="#161614" d="M50 1C22.39 1 0 23.386 0 51c0 22.092 14.327 40.834 34.193 47.446 2.499.462 3.417-1.085 3.417-2.406 0-1.192-.047-5.131-.068-9.309-13.91 3.025-16.846-5.9-16.846-5.9-2.274-5.779-5.551-7.315-5.551-7.315-4.537-3.104.341-3.04.341-3.04 5.022.353 7.665 5.153 7.665 5.153 4.46 7.644 11.697 5.434 14.55 4.156.449-3.232 1.745-5.437 3.175-6.686-11.106-1.264-22.78-5.552-22.78-24.71 0-5.459 1.953-9.92 5.151-13.42-.519-1.26-2.23-6.346.485-13.233 0 0 4.198-1.344 13.753 5.125 3.988-1.108 8.266-1.663 12.515-1.682 4.25.019 8.53.574 12.526 1.682 9.544-6.469 13.736-5.125 13.736-5.125 2.722 6.887 1.01 11.973.49 13.232 3.206 3.502 5.146 7.962 5.146 13.42 0 19.205-11.697 23.434-22.83 24.671 1.793 1.552 3.391 4.595 3.391 9.26 0 6.69-.058 12.074-.058 13.721 0 1.33.9 2.89 3.435 2.399C85.692 91.819 100 73.085 100 51c0-27.614-22.386-50-50-50"/><path fill="#161614" d="M18.727 72.227c-.11.248-.502.322-.857.152-.363-.163-.567-.502-.45-.751.109-.256.5-.327.862-.156.363.163.57.505.445.755m2.46 2.194c-.24.221-.706.118-1.022-.231-.327-.349-.388-.814-.146-1.04.246-.22.698-.117 1.026.232.327.353.39.816.14 1.04zm1.687 2.808c-.307.213-.808.013-1.118-.432-.306-.444-.306-.977.007-1.191.31-.214.804-.021 1.118.42.305.452.305.985-.008 1.203m2.853 3.252c-.274.302-.858.22-1.285-.192-.437-.403-.56-.975-.284-1.277.277-.303.864-.218 1.295.191.434.403.566.979.274 1.278m3.688 1.098c-.12.391-.683.57-1.25.403-.565-.171-.935-.63-.821-1.026.118-.394.682-.58 1.253-.401.565.17.936.625.818 1.024m4.197.465c.014.413-.466.755-1.06.762-.599.013-1.082-.32-1.088-.726 0-.416.469-.755 1.067-.765.594-.012 1.081.32 1.081.73m4.123-.158c.071.403-.342.816-.932.926-.58.106-1.118-.143-1.192-.541-.072-.413.35-.826.928-.933.592-.103 1.12.14 1.196.548"/></svg>
-        
-        
         </div>
         </div>
         </div>
@@ -117,7 +115,7 @@ function App() {
           <h1 className='text-2xl md:text-3xl lg:text-4xl'>MY Projects</h1>
           <p className='md:text-lg mt-3'>Here are some projects that showcase my skills in <span className='font-semibold'>front-end development</span>, UI design, and simple backend integration.</p>
         </div>
-        <div className="cards flex flex-col md:flex-row justify-between gap-10 lg:gap-30 mt-10">
+        <a href="https://restaurant-page-the-local-bite.onrender.com/" className="cards flex flex-col md:flex-row justify-between gap-10 lg:gap-30 mt-10">
           <div className="card flex flex-col border-1 rounded-xl md:w-full transition-transform duration-200 hover:scale-102">
             <img src={TBL} className='rounded-t-xl' alt="proj1"></img>
             <div className='space-y-2 lg:space-y-4 p-5'>
@@ -134,7 +132,7 @@ function App() {
               <button className='text-lg md:text-xl lg:text-2xl underline hover:cursor-pointer transition-transform duration-200 hover:scale-102'>View Project</button>
               </div>
           </div>
-        </div>
+        </a>
 
       </section>
       <section ref={contactRef} className='socials-and-Contact flex flex-col px-10 md:px-25 lg:flex-row gap-10 lg:gap-30 mt-20'>
