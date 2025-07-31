@@ -59,7 +59,7 @@ export default function Nav({ contactRef, projectRef, heroRef }) {
 
       <div
         ref={menuRef}
-        className={`side-menu fixed z-10 top-0 right-0 h-full w-2/3 space-y-5 text-white bg-black p-5 shadow-lg transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}
+        className={`side-menu fixed z-10 top-0 right-0 h-[100vh] w-2/3 space-y-5 text-white bg-(--black) p-5 shadow-lg transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}
       >
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Tawqi Tahmed</h1>
