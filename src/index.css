@@ -5,6 +5,13 @@
     --white: hsl(45,29%,97%);
     --white2: hsl(45,10%,97%);
 }
+
+[data-theme="dark"] {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  --bg-color: #1a1a1a;
+  --text-color: white;
+}
 body {
   font-family: 'Lato', sans-serif; 
   cursor: none; 
@@ -14,11 +21,12 @@ body {
   to { opacity: 1; }
 }
 
+
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 50%;
   pointer-events: none; 
   transform: translate(-50%, -50%); 
@@ -33,6 +41,7 @@ body {
     display: none;
   }
 }
+
 
 .lato-thin {
   font-family: "Lato", sans-serif;
